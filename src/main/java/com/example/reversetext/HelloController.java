@@ -21,7 +21,7 @@ public class HelloController {
         }
     }
 
-    private String reverseText(String text) {
+    String reverseText(String text) {
         char[] original = text.toCharArray();
         char[] reversed = new char[original.length];
         int len = original.length;
