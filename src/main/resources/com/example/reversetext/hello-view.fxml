@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.control.TextField?>
-
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 
-<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.reversetext.HelloController">
-<TextField fx:id="inputField" promptText="Введите текст здесь..."/>
-<Button text="Перевернуть текст" onAction="#handleReverseAction"/>
-<Label fx:id="outputLabel"/>
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.reversetext.HelloController">
+    <TextArea fx:id="inputField" promptText="Введите текст здесь..." wrapText="true"/>
+    <HBox spacing="10">
+        <Button text="Перевернуть текст" onAction="#handleReverseAction"/>
+        <Button text="Очистить" onAction="#handleClearAction"/> <!-- Новая кнопка -->
+    </HBox>
+    <TextArea fx:id="outputField" editable="false" wrapText="true"/>
 </VBox>

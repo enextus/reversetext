@@ -1,29 +1,27 @@
 package com.example.reversetext;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 
 public class HelloController {
 
     @FXML
-    private TextField inputField;
+    private TextArea inputField;
 
     @FXML
-    private Label outputLabel;
+    private TextArea outputField;
 
     @FXML
     protected void handleReverseAction() {
         String inputText = inputField.getText();
         if (inputText.length() <= 2999) {
-            outputLabel.setText(reverseText(inputText));
+            outputField.setText(reverseText(inputText));
         } else {
-            outputLabel.setText("Текст превышает лимит в 2999 символов.");
+            outputField.setText("Текст превышает лимит в 2999 символов.");
         }
     }
 
     private String reverseText(String text) {
-        // Логика переворачивания текста
         char[] original = text.toCharArray();
         char[] reversed = new char[original.length];
         int len = original.length;
@@ -33,5 +31,11 @@ public class HelloController {
         }
 
         return new String(reversed);
+    }
+
+    @FXML
+    protected void handleClearAction() {
+        inputField.clear();
+        outputField.clear();
     }
 }
