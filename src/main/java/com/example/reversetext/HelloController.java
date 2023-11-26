@@ -6,10 +6,10 @@ import javafx.scene.control.TextArea;
 public class HelloController {
 
     @FXML
-    private TextArea inputField;
+    TextArea inputField;
 
     @FXML
-    private TextArea outputField;
+    TextArea outputField;
 
     @FXML
     protected void handleReverseAction() {
